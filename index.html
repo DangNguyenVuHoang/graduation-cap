@@ -14,30 +14,45 @@
       .no-print { display: none !important; }
       .card { box-shadow: none !important; }
     }
-
-    /* Responsive iframe */
     @media (max-width: 640px) { iframe { height: 220px !important; } }
     @media (min-width: 641px) and (max-width: 1023px) { iframe { height: 260px !important; } }
     @media (min-width: 1024px) { iframe { height: 320px !important; } }
 
-    /* Hiệu ứng gradient nền */
     .bg-animated {
       background: linear-gradient(135deg, #fff7ed, #fffaf0, #fef3c7);
       background-size: 400% 400%;
       animation: gradientShift 12s ease infinite;
     }
-
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
+    #musicControl {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #f97316;
+      color: #f97316;
+      font-weight: 500;
+      border-radius: 9999px;
+      padding: 8px 14px;
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+    #musicControl:hover { background: #f97316; color: white; }
   </style>
 </head>
 <body class="min-h-screen bg-animated text-slate-800 p-4 sm:p-6 md:p-8 lg:p-10">
 
   <main class="max-w-5xl mx-auto">
-    <!-- HEADER -->
     <header class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 border-b-4 border-orange-500 pb-4">
       <div>
         <h1 class="text-3xl md:text-4xl font-bold text-orange-600">🎓 Thư Mời Dự Lễ Tốt Nghiệp</h1>
@@ -51,13 +66,11 @@
       </div>
     </header>
 
-    <!-- CARD -->
     <section class="card bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-5 sm:p-8 lg:p-12 border border-orange-100 relative overflow-hidden">
-      <img src="https://img.freepik.com/free-vector/student-graduation-cap-with-gold-tassel-ribbon_107791-16542.jpg?semt=ais_hybrid&w=740&q=80" alt="Graduation Cap" 
+      <img src="https://i.imgur.com/htJhs7D.png" alt="Graduation Cap"
            class="absolute right-0 bottom-0 w-40 sm:w-56 opacity-20 md:opacity-30 pointer-events-none" />
 
       <div class="flex flex-col md:flex-row md:items-start md:gap-10 relative z-10">
-        <!-- LEFT -->
         <div class="md:w-2/3">
           <h2 class="text-lg sm:text-xl md:text-2xl font-medium text-orange-700">Chào các bạn thân mến,</h2>
 
@@ -74,7 +87,6 @@
           <p class="mt-6 font-semibold text-orange-700 text-lg">— Đặng Nguyễn Vũ Hoàng</p>
         </div>
 
-        <!-- RIGHT -->
         <aside class="mt-6 md:mt-0 md:w-1/3 flex-none">
           <div class="border border-orange-200 rounded-lg p-4 bg-orange-50 shadow-inner">
             <h3 class="text-sm font-semibold text-orange-700 uppercase tracking-wide">Thông tin nhanh</h3>
@@ -84,7 +96,7 @@
               <li><strong>Địa điểm:</strong> Trường Đại học FPT — Khu Công Nghệ Cao</li>
               <li>
                 <strong>Liên hệ:</strong>
-                <a href="tel:0346711532" id="phoneNumber" 
+                <a href="tel:0346711532" id="phoneNumber"
                    class="text-orange-600 font-semibold underline hover:text-orange-700 transition">
                   0346711532
                 </a>
@@ -94,7 +106,7 @@
             <div class="mt-4 flex gap-2 flex-wrap justify-center">
               <a href="https://zalo.me/0346711532" target="_blank"
                  class="flex items-center gap-2 px-3 py-2 bg-cyan-600 text-white rounded-md text-sm hover:bg-cyan-700 transition no-print">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="w-5 h-5"> Zalo
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" class="w-5 h-5" alt="Zalo"> Zalo
               </a>
               <a href="https://www.facebook.com/angnguyenvuhoang" target="_blank"
                  class="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition no-print">
@@ -106,16 +118,12 @@
         </aside>
       </div>
 
-      <!-- GOOGLE MAP -->
       <div class="mt-10">
         <h3 class="text-lg font-semibold text-orange-700 mb-3">📍 Địa điểm tổ chức</h3>
         <div class="rounded-xl overflow-hidden border border-orange-100 shadow-sm">
-          <iframe 
-            src="https://www.google.com/maps?q=Trường+Đại+học+FPT,+Khu+Công+Nghệ+Cao,+TPHCM&output=embed&z=15"
-            width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps?q=Trường+Đại+học+FPT,+Khu+Công+Nghệ+Cao,+TPHCM&output=embed&z=15"
+            width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
         </div>
-
         <div class="mt-4 text-center">
           <a href="https://maps.app.goo.gl/z6ny2HsiMJB8ACB29?g_st=ic" target="_blank"
              class="inline-block px-5 py-2 bg-orange-600 text-white rounded-lg shadow hover:bg-orange-700 transition no-print">
@@ -125,7 +133,6 @@
       </div>
 
       <hr class="my-6 border-orange-100" />
-
       <p class="text-sm text-slate-500">
         💡 Gợi ý: Bạn có thể nhấn “In / Save PDF” để lưu thư mời. Trên điện thoại, có thể chia sẻ hoặc chụp màn hình để gửi cho bạn bè.
       </p>
@@ -136,30 +143,78 @@
     </footer>
   </main>
 
-  <!-- SCRIPT -->
-  <script>
-    const printBtn = document.getElementById('printBtn');
-    const phone = document.getElementById('phoneNumber');
+  <!-- Nút điều khiển nhạc -->
+  <button id="musicControl" class="no-print">🎵 Đang bật nhạc</button>
 
-    // Nút in
-    printBtn?.addEventListener('click', () => window.print());
+  <!-- Nhạc nền -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="A Million Dreams (Instrumental) - Taylor Davis (youtube).mp3" type="audio/mp3">
+  </audio>
 
-    // Khi click vào số điện thoại
-    phone?.addEventListener('click', (e) => {
-      const phoneNumber = phone.textContent.trim();
+<script>
+  const printBtn = document.getElementById('printBtn');
+  const phone = document.getElementById('phoneNumber');
+  const music = document.getElementById('bgMusic');
+  const musicControl = document.getElementById('musicControl');
 
-      // Nếu là mobile → cho phép gọi trực tiếp
-      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      if (isMobile) return; // trên điện thoại sẽ tự mở app gọi
+  // In PDF
+  printBtn?.addEventListener('click', () => window.print());
 
-      // Nếu là máy tính → copy số và hiển thị thông báo
-      e.preventDefault();
-      navigator.clipboard.writeText(phoneNumber).then(() => {
-        alert(`📞 Đã sao chép số điện thoại ${phoneNumber} vào clipboard!`);
-      }).catch(() => {
-        alert('⚠️ Không thể sao chép tự động. Vui lòng copy thủ công.');
-      });
+  // Gọi điện / copy số
+  phone?.addEventListener('click', (e) => {
+    const phoneNumber = phone.textContent.trim();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) return; // mobile → auto mở app gọi
+    e.preventDefault();
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      alert(`📞 Đã sao chép số điện thoại ${phoneNumber} vào clipboard!`);
     });
-  </script>
+  });
+
+  // --- PHÁT NHẠC TỰ ĐỘNG TOÀN THIẾT BỊ ---
+  const tryPlayMusic = async () => {
+    try {
+      music.volume = 0.5;
+      // Bắt đầu phát nhạc (muted để tránh bị chặn)
+      music.muted = true;
+      await music.play();
+      // Sau 1 giây, bật tiếng lại
+      setTimeout(() => {
+        music.muted = false;
+      }, 1000);
+      playing = true;
+      musicControl.textContent = "🎵 Đang bật nhạc";
+    } catch (err) {
+      // Nếu bị chặn autoplay, phát khi người dùng tương tác
+      musicControl.textContent = "▶️ Phát nhạc";
+      const enableMusic = () => {
+        music.play();
+        playing = true;
+        musicControl.textContent = "🎵 Đang bật nhạc";
+        document.removeEventListener("touchstart", enableMusic);
+        document.removeEventListener("click", enableMusic);
+      };
+      document.addEventListener("touchstart", enableMusic);
+      document.addEventListener("click", enableMusic);
+    }
+  };
+
+  let playing = false;
+  tryPlayMusic();
+
+  // Nút điều khiển nhạc
+  musicControl.addEventListener("click", () => {
+    if (playing) {
+      music.pause();
+      playing = false;
+      musicControl.textContent = "▶️ Phát nhạc";
+    } else {
+      music.play();
+      playing = true;
+      musicControl.textContent = "🎵 Đang bật nhạc";
+    }
+  });
+</script>
+
 </body>
 </html>
