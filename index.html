@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎓 Thư Mời Dự Lễ Tốt Nghiệp — Đặng Nguyễn Vũ Hoàng</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .card { box-shadow: none !important; }
+    }
+
+    /* Responsive iframe */
+    @media (max-width: 640px) { iframe { height: 220px !important; } }
+    @media (min-width: 641px) and (max-width: 1023px) { iframe { height: 260px !important; } }
+    @media (min-width: 1024px) { iframe { height: 320px !important; } }
+
+    /* Hiệu ứng gradient nền */
+    .bg-animated {
+      background: linear-gradient(135deg, #fff7ed, #fffaf0, #fef3c7);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-animated text-slate-800 p-4 sm:p-6 md:p-8 lg:p-10">
+
+  <main class="max-w-5xl mx-auto">
+    <!-- HEADER -->
+    <header class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 border-b-4 border-orange-500 pb-4">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-bold text-orange-600">🎓 Thư Mời Dự Lễ Tốt Nghiệp</h1>
+        <p class="mt-1 text-sm sm:text-base text-slate-600">Đặng Nguyễn Vũ Hoàng — Ngày 20/11/2025</p>
+        <p class="text-sm text-slate-500">Trường Đại học FPT, Khu Công Nghệ Cao</p>
+      </div>
+      <div class="mt-3 sm:mt-0 no-print">
+        <button id="printBtn" class="px-4 py-2 bg-orange-600 text-white rounded-lg shadow hover:bg-orange-700 transition">
+          🖨️ In / Save PDF
+        </button>
+      </div>
+    </header>
+
+    <!-- CARD -->
+    <section class="card bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-5 sm:p-8 lg:p-12 border border-orange-100 relative overflow-hidden">
+      <img src="https://img.freepik.com/free-vector/student-graduation-cap-with-gold-tassel-ribbon_107791-16542.jpg?semt=ais_hybrid&w=740&q=80" alt="Graduation Cap" 
+           class="absolute right-0 bottom-0 w-40 sm:w-56 opacity-20 md:opacity-30 pointer-events-none" />
+
+      <div class="flex flex-col md:flex-row md:items-start md:gap-10 relative z-10">
+        <!-- LEFT -->
+        <div class="md:w-2/3">
+          <h2 class="text-lg sm:text-xl md:text-2xl font-medium text-orange-700">Chào các bạn thân mến,</h2>
+
+          <p class="mt-4 text-base leading-relaxed">
+            Mình rất vui thông báo rằng <strong>lễ tốt nghiệp của mình</strong> sẽ được tổ chức vào <strong>ngày 20/11/2025</strong> tại <strong>Trường Đại học FPT – Khu Công Nghệ Cao</strong>.
+          </p>
+
+          <p class="mt-4 text-base leading-relaxed">
+            Buổi lễ sẽ diễn ra vào <strong>11h trưa</strong>. Mình rất mong các bạn có thể đến chung vui — sự có mặt của các bạn là món quà tinh thần vô giá đối với mình.
+          </p>
+
+          <p class="mt-4 text-base leading-relaxed">Hẹn gặp các bạn vào ngày 20/11 nhé! ❤️</p>
+
+          <p class="mt-6 font-semibold text-orange-700 text-lg">— Đặng Nguyễn Vũ Hoàng</p>
+        </div>
+
+        <!-- RIGHT -->
+        <aside class="mt-6 md:mt-0 md:w-1/3 flex-none">
+          <div class="border border-orange-200 rounded-lg p-4 bg-orange-50 shadow-inner">
+            <h3 class="text-sm font-semibold text-orange-700 uppercase tracking-wide">Thông tin nhanh</h3>
+            <ul class="mt-3 text-sm space-y-2 text-slate-700">
+              <li><strong>Ngày:</strong> 20/11/2025</li>
+              <li><strong>Giờ:</strong> 11:00 AM</li>
+              <li><strong>Địa điểm:</strong> Trường Đại học FPT — Khu Công Nghệ Cao</li>
+              <li>
+                <strong>Liên hệ:</strong>
+                <a href="tel:0346711532" id="phoneNumber" 
+                   class="text-orange-600 font-semibold underline hover:text-orange-700 transition">
+                  0346711532
+                </a>
+              </li>
+            </ul>
+
+            <div class="mt-4 flex gap-2 flex-wrap justify-center">
+              <a href="https://zalo.me/0346711532" target="_blank"
+                 class="flex items-center gap-2 px-3 py-2 bg-cyan-600 text-white rounded-md text-sm hover:bg-cyan-700 transition no-print">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="w-5 h-5"> Zalo
+              </a>
+              <a href="https://www.facebook.com/angnguyenvuhoang" target="_blank"
+                 class="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition no-print">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.597 0 0 .592 0 1.326v21.348C0 23.404.597 24 1.325 24h11.496v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.657-4.788 1.325 0 2.463.099 2.794.143v3.24l-1.918.001c-1.504 0-1.794.715-1.794 1.763v2.313h3.588l-.467 3.622h-3.121V24h6.116C23.403 24 24 23.404 24 22.674V1.326C24 .592 23.403 0 22.675 0z"/></svg>
+                Facebook
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- GOOGLE MAP -->
+      <div class="mt-10">
+        <h3 class="text-lg font-semibold text-orange-700 mb-3">📍 Địa điểm tổ chức</h3>
+        <div class="rounded-xl overflow-hidden border border-orange-100 shadow-sm">
+          <iframe 
+            src="https://www.google.com/maps?q=Trường+Đại+học+FPT,+Khu+Công+Nghệ+Cao,+TPHCM&output=embed&z=15"
+            width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+
+        <div class="mt-4 text-center">
+          <a href="https://maps.app.goo.gl/z6ny2HsiMJB8ACB29?g_st=ic" target="_blank"
+             class="inline-block px-5 py-2 bg-orange-600 text-white rounded-lg shadow hover:bg-orange-700 transition no-print">
+            Mở trong Google Maps
+          </a>
+        </div>
+      </div>
+
+      <hr class="my-6 border-orange-100" />
+
+      <p class="text-sm text-slate-500">
+        💡 Gợi ý: Bạn có thể nhấn “In / Save PDF” để lưu thư mời. Trên điện thoại, có thể chia sẻ hoặc chụp màn hình để gửi cho bạn bè.
+      </p>
+    </section>
+
+    <footer class="mt-8 text-center text-xs text-slate-400">
+      © 2025 — Thiết kế bởi <span class="font-semibold text-orange-600">Đặng Nguyễn Vũ Hoàng</span>
+    </footer>
+  </main>
+
+  <!-- SCRIPT -->
+  <script>
+    const printBtn = document.getElementById('printBtn');
+    const phone = document.getElementById('phoneNumber');
+
+    // Nút in
+    printBtn?.addEventListener('click', () => window.print());
+
+    // Khi click vào số điện thoại
+    phone?.addEventListener('click', (e) => {
+      const phoneNumber = phone.textContent.trim();
+
+      // Nếu là mobile → cho phép gọi trực tiếp
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (isMobile) return; // trên điện thoại sẽ tự mở app gọi
+
+      // Nếu là máy tính → copy số và hiển thị thông báo
+      e.preventDefault();
+      navigator.clipboard.writeText(phoneNumber).then(() => {
+        alert(`📞 Đã sao chép số điện thoại ${phoneNumber} vào clipboard!`);
+      }).catch(() => {
+        alert('⚠️ Không thể sao chép tự động. Vui lòng copy thủ công.');
+      });
+    });
+  </script>
+</body>
+</html>
