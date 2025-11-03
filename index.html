@@ -199,41 +199,63 @@
     });
   });
 
-  // --- PHÁT NHẠC TỰ ĐỘNG ---
+  // --- PHÁT NHẠC TỰ ĐỘNG (BẢN FIX TƯƠNG THÍCH VERCEL) ---
+  let playing = false;
+
   const tryPlayMusic = async () => {
     try {
+      // Bắt đầu ở chế độ mute để tránh Chrome block
       music.volume = 0.5;
       music.muted = true;
       await music.play();
-      setTimeout(() => (music.muted = false), 1000);
+      // Sau 1 giây, bật âm thanh
+      setTimeout(() => {
+        music.muted = false;
+      }, 1000);
       playing = true;
       musicControl.textContent = "🎵 Đang bật nhạc";
-    } catch {
+    } catch (err) {
+      console.warn("Autoplay bị chặn, chờ user tương tác...", err);
       musicControl.textContent = "▶️ Phát nhạc";
+
+      // Khi user chạm / click bất kỳ, phát nhạc
       const enableMusic = () => {
+        music.muted = false;
+        music.volume = 0.5;
         music.play();
         playing = true;
         musicControl.textContent = "🎵 Đang bật nhạc";
-        document.removeEventListener("touchstart", enableMusic);
         document.removeEventListener("click", enableMusic);
+        document.removeEventListener("touchstart", enableMusic);
       };
-      document.addEventListener("touchstart", enableMusic);
-      document.addEventListener("click", enableMusic);
+      document.addEventListener("click", enableMusic, { once: true });
+      document.addEventListener("touchstart", enableMusic, { once: true });
     }
   };
 
-  let playing = false;
-  tryPlayMusic();
+  // Chrome autoplay workaround: trigger sau DOM ready + nhỏ delay
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      // Tạo interaction giả nếu cần
+      const event = new Event("click");
+      window.dispatchEvent(event);
+      tryPlayMusic();
+    }, 700);
+  });
 
+  // Toggle play/pause thủ công
   musicControl.addEventListener("click", () => {
     if (playing) {
       music.pause();
       playing = false;
       musicControl.textContent = "▶️ Phát nhạc";
     } else {
-      music.play();
-      playing = true;
-      musicControl.textContent = "🎵 Đang bật nhạc";
+      music.play().then(() => {
+        playing = true;
+        musicControl.textContent = "🎵 Đang bật nhạc";
+      }).catch(() => {
+        alert("Trình duyệt đang chặn phát nhạc tự động, hãy click thêm lần nữa nhé 🎶");
+      });
     }
   });
 
@@ -253,6 +275,7 @@
 
   setInterval(createFlyingStar, 600);
 </script>
+
 
 </body>
 </html>
